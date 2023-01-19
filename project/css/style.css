@@ -1,0 +1,112 @@
+@import "/website/project/fonts/Poppins-Regular.ttf";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins-Regular',sans-serif !important;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    min-height: 100vh;
+    background-color:#222222 ;
+}
+
+.container {
+    position: relative;
+    width: 400px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: #434242;
+    border-radius: 15px;
+    bottom: 15px;
+}
+
+.navlink ul{
+    position: relative;
+    display: flex;
+    width: 350px;
+}
+
+.navlink ul li{
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+
+.navlink ul li a{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.navlink ul li a .link_icon{
+    position: relative;
+    display: block;
+    font-size: 1.5em;
+    line-height: 75px;
+    color: #F3EFE0;
+}
+
+.navlink ul li.active a .link_icon{
+    transform: translateY(-8px);
+    color: #22A39F;
+}
+
+.navlink ul li a .link_title{
+    position: absolute;
+    opacity: 0;
+    font-weight: 600;
+    font-size: 0.5em;
+    color: #222222;
+    transition: 0.5s;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transform: translateY(0px);
+}
+
+.navlink ul li.active a .link_title{
+ transform: translateY(13px);
+ opacity: 12;
+}
+
+.indicator{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   transition: 0.5s;
+}
+.indicator::before{
+    content:'';
+    position:absolute;
+    bottom: 12px;
+    width:80%;
+    height: 14px;
+    background: #22A39F;
+    border-radius:10px;
+}
+
+.container ul li:nth-child(2).active ~ .container {
+    transform: translateX(calc(70px *1));
+}
+.navlink ul li:nth-child(3).active ~ .navlink {
+    transform: translateX(calc(70px *2));
+}
+.navlink ul li:nth-child(4).active ~ .navlink {
+    transform: translateX(calc(70px *3));
+}
+.navlink ul li:nth-child(5).active ~ .navlink {
+    transform: translateX(calc(70px *4));
+}
